@@ -27,3 +27,11 @@ Route::group(['middleware' => 'admin'], function() {
    Route::resource('admin/media', 'AdminControllers\MediaController');
 
 });
+
+
+//File Uploads
+// Route::post('/test_images', function() {
+//
+//    request()->file('test_image')->store('test_images');
+//    return back();
+// });

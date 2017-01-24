@@ -25,6 +25,10 @@ class CategoriesController extends Controller
       return redirect('/admin/categories');
    }
 
+   public function show($id) {
+     return $id; 
+   }
+
    public function edit($id){
 
       $category = Category::findOrFail($id);

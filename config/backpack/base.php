@@ -12,11 +12,11 @@ return [
     */
 
     // Project name. Shown in the breadcrumbs and a few other places.
-    'project_name' => 'The Seven Equations',
+    'project_name' => 'Basic CMS',
 
     // Menu logos
-    'logo_lg'   => '<b>Seven</b>Equations',
-    'logo_mini' => '<b>S</b>E',
+    'logo_lg'   => '<b>BASIC</b>CMS',
+    'logo_mini' => '<b>B</b>C',
 
     // Developer or company name. Shown in footer.
     'developer_name' => 'Tim Beckett',
@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'registration_open' => false,
+    'registration_open' => true,
 
 
     /*
