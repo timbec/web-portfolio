@@ -45,4 +45,10 @@ class User extends Authenticatable
        return $this->hasMany('App\Post');
 
     }
+
+    //Assigns projects to user
+    public function projects()
+   {
+      return $this->hasMany('App\Project');
+   }
 }
