@@ -14,6 +14,18 @@
 
       <section class="post-content">
          <p>{{ $post->body }}</p>
+          <ul>
+         @unless($post->tags->isEmpty())
+         <h3>Tags: </h3>
+         @foreach($post->tags as $tag)
+            <li>
+            <a href="/blog/tags/{{ $tag->name }}">
+            {{ $tag->name }}
+            </a>
+            </li>
+         @endforeach
+         @endunless
+         </ul>
       </section>
    @endif
 @stop

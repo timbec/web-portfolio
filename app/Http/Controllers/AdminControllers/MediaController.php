@@ -10,6 +10,7 @@ use App\Photo;
 
 class MediaController extends Controller
 {
+  
     public function index(){
 
       $photos = Photo::all();

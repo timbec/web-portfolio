@@ -10,6 +10,7 @@ use App\Category;
 
 class CategoriesController extends Controller
 {
+    /**
     public function index(){
 
       $categories = Category::all();

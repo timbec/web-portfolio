@@ -47,8 +47,8 @@ class User extends Authenticatable
     }
 
     //Assigns projects to user
-    public function projects()
+    public function works()
    {
-      return $this->hasMany('App\Project');
+      return $this->hasMany('App\Work');
    }
 }

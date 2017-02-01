@@ -1,0 +1,71 @@
+/*Styles for 480 Pixels and up*/
+
+/*Header*/
+
+.shapes {
+   display: block;
+}
+
+.black-rectangle {
+    width: 35%;
+    height: 100%;
+    background: $black;
+    position: absolute;
+    right: 0;
+    z-index: -10;
+}
+
+#intro-slider .black-rectangle {
+    z-index: 0;
+}
+
+.red-triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -75px;
+    right: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 170px solid $red;
+     -ms-transform: rotate(-29deg); /* IE 9 */
+    -webkit-transform: rotate(-29deg); /* Chrome, Safari, Opera */
+    transform: rotate(-29deg);
+    z-index: 1;
+}
+
+.black-cube {
+    position: absolute;
+    top: 75px;
+    left: 130px;
+    width: 110px;
+    height: 110px;
+    background: $black;
+}
+
+.red-cube {
+    position: absolute;
+    @extend .black-cube;
+    background: $red;
+    top: 110px;
+    left: 50px;
+    z-index: -1;
+}
+
+.blue-circle {
+    background: $blue;
+    position: absolute;
+    right: 28%;
+    top: -25px;
+     -moz-border-radius: 70px;
+     -webkit-border-radius: 70px;
+     border-radius: 70px;
+     z-index: -1;
+}
+
+
+#site-title {
+   float: left;
+   margin-top: 0px;
+   margin-left: 25px;
+}

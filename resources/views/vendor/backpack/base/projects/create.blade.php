@@ -10,7 +10,7 @@
          </div>
 
          <div class="form-group">
-            {!! Form::label('skill_id', 'Category:') !!}
+            {!! Form::label('project_category_id', 'Category:') !!}
             {!! Form::select('project_category_id', array('' => 'Choose Categories') + $project_categories, null, ['class'=>'form-control'])!!}
          </div>
 
@@ -24,6 +24,18 @@
             {!! Form::label('thumbnail_id', 'Thumbnail:') !!}
             {!! Form::file('thumbnail_id', null, ['class'=>'form-control', 'rows'=>5])!!}
          </div>
+
+         <div class="form-group">
+            {!! Form::label('website_link', 'Website Link:') !!}
+            {!! Form::text('website_link', null, ['class'=>'form-control'])!!}
+         </div>
+
+
+         <div class="form-group">
+            {!! Form::label('skills', 'Skills:') !!}
+            {!! Form::select('skills[]', $skills, null, ['class'=>'form-control', 'multiple'])!!}
+         </div>
+
 
          <div class="form-group">
             {!! Form::submit('Create Project', ['class'=>'btn btn-primary']) !!}

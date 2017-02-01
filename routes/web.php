@@ -11,13 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@home'); 
+Route::get('/about', 'PagesController@about'); 
+Route::get('/contact', 'PagesController@contact'); 
 
 //Posts/blog
 Route::get('/blog', 'PostsController@index');
 Route::get('/blog/{slug}', ['as' => 'blog.post', 'uses'=>'PostsController@post']);
+
+//Sort By Tags 
+Route::get('/tags/{tag}', 'TagsController@index');
+
+//Projects
+Route::get('/works', 'WorksController@index');
+Route::get('/works/{slug}', ['as' => 'works.work', 'uses'=>'WorksController@work']);
 
 //Admin routes
 Route::group(['middleware' => 'admin'], function() {
@@ -31,6 +38,9 @@ Route::group(['middleware' => 'admin'], function() {
 
   //Project Categories
    Route::resource('admin/project-categories', 'AdminControllers\ProjectCategoriesController');
+
+    //Works
+   Route::resource('admin/works', 'AdminControllers\WorksController');
 
 });
 

@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Project;
 use App\Photo; 
 use App\Thumbnail;
+use App\Skill; 
 use App\ProjectCategory;
 
 
@@ -21,7 +22,7 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Project $project=null)
     {
         $projects = Project::paginate(3);
 
@@ -29,16 +30,19 @@ class ProjectsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Show the form for creating a new resource
+     * 
+     * @return [type]
      */
     public function create()
     {
 
          $project_categories = ProjectCategory::pluck('name', 'id')->all();
+         
+         $skills = Skill::pluck('name', 'id'); 
 
-         return view('vendor.backpack.base.projects.create', compact('project_categories'));
+
+         return view('vendor.backpack.base.projects.create', compact('project_categories', 'skills'));
     }
 
     /**
@@ -52,9 +56,10 @@ class ProjectsController extends Controller
 
       //return $request->all();
 
-      $input = $request->all();
+      $input = $request->all(); 
 
       $user = Auth::user();
+ 
 
       if($file = $request->file('thumbnail_id')) {
 
@@ -65,8 +70,10 @@ class ProjectsController extends Controller
 
          $input['thumbnail_id'] = $thumbnail->id;
       }
+ 
+      $projects = $user->projects()->create($input);
 
-      $user->projects()->create($input);
+      $projects->skills()->attach($request->input('skills'));
 
       return redirect('/admin/projects');
 
@@ -94,8 +101,9 @@ class ProjectsController extends Controller
        $project = Project::findOrFail($id);
 
        $project_categories = ProjectCategory::pluck('name', 'id')->all();
+       $skills = Skill::pluck('name', 'id');
 
-       return view('vendor.backpack.base.projects.edit', compact('project', 'project_categories'));
+       return view('vendor.backpack.base.projects.edit', compact('project', 'project_categories', 'skills'));
     }
 
     /**

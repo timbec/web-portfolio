@@ -20,10 +20,14 @@
             {!! Form::textarea('body', null, ['class'=>'form-control'])!!}
          </div>
 
-
          <div class="form-group">
             {!! Form::label('photo_id', 'Thumbnail:') !!}
             {!! Form::file('photo_id', null, ['class'=>'form-control', 'rows'=>5])!!}
+         </div>
+
+          <div class="form-group">
+            {!! Form::label('tags', 'Tags:') !!}
+            {!! Form::select('tags[]', $tags, null, ['class'=>'form-control', 'multiple'])!!}
          </div>
 
          <div class="form-group">

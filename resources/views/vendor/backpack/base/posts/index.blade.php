@@ -11,8 +11,10 @@
             <th>Author</th>
             <th>Category</th>
             <th>Title</th>
-            <th>Excerpt</th>
+            
             <th>Body</th>
+            <th>Tag</th>
+            <th>Excerpt</th>
             <th>Created At</th>
             <th>Updated At</th>
          </tr>
@@ -28,8 +30,13 @@
                <td>{{ $post->user->name }}</td>
                <td>{{ $post->category ? $post->category->name : 'Uncategorized'}}</td>
                <td>{{ $post->title }}</td>
-               <td>{{ $post->excerpt }}</td>
                <td>{{ str_limit($post->body, 25) }}</td>
+               <td>
+            @foreach ($post->tags as $tag)
+                <li>{{ $tag->name }}</li>
+            @endforeach
+               </td>
+               <td>{{ $post->excerpt }}</td>
                <td>{{ $post->created_at->diffForhumans() }}</td>
                <td>{{ $post->updated_at->diffForhumans() }}</td>
                <td><a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a></td>

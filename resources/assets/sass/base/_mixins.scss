@@ -1,0 +1,20 @@
+/*Mixins*/
+
+//Fonts
+
+@mixin blairMidi() {
+	font-family: "BlairMdITC TT", BlairMdITCTTMedium,  "Lucida Sans Unicode", "Lucida Sans", sans-serif; 
+}
+
+@mixin Lucida() {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+//Clearfix
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

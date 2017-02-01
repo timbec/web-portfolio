@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Photo;
 use App\Category;
+use App\Tag;
 
 class PostsController extends Controller
 {
@@ -18,7 +19,7 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Tag $tag=null)
     {
         $posts = Post::paginate(3);
 
@@ -34,8 +35,9 @@ class PostsController extends Controller
     {
 
          $categories = Category::pluck('name', 'id')->all();
+         $tags = Tag::pluck('name', 'id');
 
-         return view('vendor.backpack.base.posts.create', compact('categories'));
+         return view('vendor.backpack.base.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -63,7 +65,9 @@ class PostsController extends Controller
          $input['photo_id'] = $photo->id;
       }
 
-      $user->posts()->create($input);
+      $posts = $user->posts()->create($input);
+
+      $posts->tags()->attach($request->input('tags')); 
 
       return redirect('/admin/posts');
 

@@ -1,0 +1,79 @@
+/*=============================================
+    ::Header
+    =================================================*/
+
+    /************SHAPES*************/
+
+.shapes {
+   display: none;
+}
+
+.logo {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        left: 20px;
+        z-index: -100;
+    }
+
+#masthead {
+    @include clearfix();
+    background-color: $transparent_white;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+.titles {
+    width: 98%;
+    float: left;
+    z-index: 100;
+}
+
+#site-title {
+    width: auto;
+    margin-top: 30px;
+    text-align: center;
+    a {
+    font-size: 65px;
+    @include blairMidi();
+    color: $black;
+    margin: 0px;
+        &:hover {
+            color: #fff;
+            text-shadow: 1px 1px 3px $black;
+        }
+    }
+}
+
+.subheader {
+    color: #FFFFFF;
+    font-size: 45px;
+    width: 100%;
+    text-align: center;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 3px #09021D;
+    margin-top: -55px;
+}
+
+#caption {
+    width: 240px;
+    position: absolute;
+    top:80px;
+    right: 50px;
+    li {
+        @include Lucida();
+    color: #fff;
+    font-size: 1.6em;
+    list-style: none;
+    display: block;
+    }
+}
+
+#caption li:nth-child(2) {
+    margin-left: 20px;
+}
+
+#caption li:nth-child(3) {
+    margin-left: 40px;
+}
