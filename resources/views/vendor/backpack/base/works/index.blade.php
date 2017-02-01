@@ -6,23 +6,26 @@
    <table class="table">
     <thead>
       <tr>
+        <th>Thumbnail</th>
         <th>Id</th>
         <th>Title</th>
         <th>Author</th>
+        <th>work Category</th>
         <th>Body</th>
-        <th>Tags</th>
+        <th>Skills</th>
         <th>Created At</th>
         <th>Updated On</th>
       </tr>
     </thead>
     <tbody>
-
    @if($works)
   
    @foreach($works as $work)
        <tr>
+               <td><img height="50" src="{{ $work->thumbnail ? $work->thumbnail->file : 'http://placeholder.it' }}" alt=""</td>
                <td>{{ $work->id }}</td>
                <td>{{ $work->user->name }}</td>
+               <td>{{ $work->category ? $work->category->name : 'Uncategorized'}}</td>
                <td>{{ $work->title }}</td>
                <td>{{ str_limit($work->body, 25) }}</td>
                <td>
@@ -30,9 +33,10 @@
                 <li>{{ $tag->name }}</li>
             @endforeach
                </td>
+               <td>{{ $work->excerpt }}</td>
                <td>{{ $work->created_at->diffForhumans() }}</td>
                <td>{{ $work->updated_at->diffForhumans() }}</td>
-              
+               <td><a class="btn btn-primary" href="{{ route('works.edit', $work->id) }}">Edit</a></td>
             </tr>
    @endforeach
    @endif

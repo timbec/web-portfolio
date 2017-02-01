@@ -16,8 +16,7 @@ class CreateWorksTable extends Migration
         Schema::create('works', function (Blueprint $table) {
            $table->increments('id');
            $table->integer('user_id')->unsigned()->index();
-           $table->integer('works_category_id')->unsigned()->index();
-           $table->integer('photo_id')->unsigned()->index(); 
+           $table->integer('work_category_id')->unsigned()->index();
            $table->integer('thumbnail_id')->unsigned()->index();
            $table->string('title');
            $table->text('body');

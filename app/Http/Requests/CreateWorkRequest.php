@@ -24,6 +24,7 @@ class CreateWorkRequest extends FormRequest
     public function rules()
     {
         return [
+            'work_category_id' => 'required',
             'title' => 'required', 
             'body' => 'required'
         ];

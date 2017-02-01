@@ -15,11 +15,27 @@
          </div>
 
 
+        <div class="form-group">
+            {!! Form::label('work_category_id', 'Work Category:') !!}
+            {!! Form::select('work_category_id', array('' => 'Choose Work Categories') + $work_categories, null, ['class'=>'form-control'])!!}
+         </div>
+
+
+         <div class="form-group">
+            {!! Form::label('thumbnail_id', 'Thumbnail:') !!}
+            {!! Form::file('thumbnail_id', null, ['class'=>'form-control', 'rows'=>5])!!}
+         </div>
+
+         <div class="form-group">
+            {!! Form::label('website_link', 'Website Link:') !!}
+            {!! Form::text('website_link', null, ['class'=>'form-control'])!!}
+         </div>
+
+
          <div class="form-group">
             {!! Form::label('tags', 'Tags:') !!}
             {!! Form::select('tags[]', $tags, null, ['class'=>'form-control', 'multiple'])!!}
          </div>
-
 
          <div class="form-group">
             {!! Form::submit('Create Work', ['class'=>'btn btn-primary']) !!}

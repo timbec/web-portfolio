@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use App\Work;
+use App\Thumbnail; 
+use App\WorkCategory; 
 use App\Tag; 
 
 class WorksController extends Controller
@@ -33,8 +35,9 @@ class WorksController extends Controller
     {
          
          $tags = Tag::pluck('name', 'id'); 
+         $work_categories = WorkCategory::pluck('name', 'id')->all(); 
 
-         return view('vendor.backpack.base.works.create', compact( 'tags'));
+         return view('vendor.backpack.base.works.create', compact( 'work_categories', 'tags'));
     }
 
     /**
@@ -52,8 +55,19 @@ class WorksController extends Controller
 
       $user = Auth::user();
 
+      if($file = $request->file('thumbnail_id')) {
+
+         $name = time() . $file->getClientOriginalName();
+
+         $file->move('thumbnails', $name);
+         $thumbnail = Thumbnail::create(['file'=>$name]);
+
+         $input['thumbnail_id'] = $thumbnail->id;
+      }
+
 
       $works = $user->works()->create($input);
+      //dd($works); 
 
       $works->tags()->attach($request->input('tags'));
 
@@ -80,12 +94,12 @@ class WorksController extends Controller
      */
     public function edit($id)
     {
-       $project = Project::findOrFail($id);
+       $work = Work::findOrFail($id);
 
-       $project_categories = ProjectCategory::pluck('name', 'id')->all();
-       $skills = Skill::pluck('name', 'id');
+       $work_categories = WorkCategory::pluck('name', 'id')->all();
+       $tags = Tag::pluck('name', 'id');
 
-       return view('vendor.backpack.base.projects.edit', compact('project', 'project_categories', 'skills'));
+       return view('vendor.backpack.base.works.edit', compact('work', 'work_categories', 'tags'));
     }
 
     /**
@@ -109,9 +123,9 @@ class WorksController extends Controller
          $input['thumbnail_id'] = $thumbnail->id;
       }
 
-      Auth::user()->projects()->whereId($id)->first()->update($input);
+      Auth::user()->works()->whereId($id)->first()->update($input);
 
-      return redirect('/admin/projects');
+      return redirect('/admin/works');
 
     }
 
@@ -123,12 +137,12 @@ class WorksController extends Controller
      */
     public function destroy($id)
     {
-      $project = Project::findOrFail($id);
+      $work = Work::findOrFail($id);
 
-      unlink(public_path() . $project->thumbnail->file);
+      unlink(public_path() . $work->thumbnail->file);
 
-      $project->delete();
+      $work->delete();
 
-      return redirect('/admin/projects');
+      return redirect('/admin/works');
     }
 }

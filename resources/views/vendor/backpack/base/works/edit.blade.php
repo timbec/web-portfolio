@@ -1,9 +1,9 @@
 @extends('backpack::layout')
 
 @section('content')
-      <h1>Edit Project</h1>
+      <h1>Edit Work</h1>
  
-      {!! Form::model($project, ['method'=>'PATCH','action'=>['AdminControllers\ProjectsController@update', $project->id], 'files'=>true]) !!}
+      {!! Form::model($work, ['method'=>'PATCH','action'=>['AdminControllers\WorksController@update', $work->id], 'files'=>true]) !!}
 
 
          <div class="form-group">
@@ -12,8 +12,8 @@
          </div>
 
          <div class="form-group">
-            {!! Form::label('project_category_id', 'Category:') !!}
-            {!! Form::select('project_category_id', array('' => 'Choose Categories') + $project_categories, null, ['class'=>'form-control'])!!}
+            {!! Form::label('work_category_id', 'Category:') !!}
+            {!! Form::select('work_category_id', array('' => 'Choose Categories') + $work_categories, null, ['class'=>'form-control'])!!}
          </div>
 
          <div class="form-group">
@@ -28,14 +28,14 @@
          </div>
 
          <div class="form-group">
-            {!! Form::submit('Edit Project', ['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Edit Work', ['class'=>'btn btn-primary']) !!}
          </div>
       {!! Form::close() !!}
 
-      {!! Form::open(['method'=>'DELETE', 'action'=>['AdminControllers\ProjectsController@destroy', $project->id], 'class'=>'pull-right']) !!}
+      {!! Form::open(['method'=>'DELETE', 'action'=>['AdminControllers\WorksController@destroy', $work->id], 'class'=>'pull-right']) !!}
 
          <div class="form-group">
-            {!!Form::submit('Delete Post', ['class'=>'btn btn-danger']) !!}
+            {!!Form::submit('Delete Work', ['class'=>'btn btn-danger']) !!}
          </div>
       {!! Form::close() !!}
 

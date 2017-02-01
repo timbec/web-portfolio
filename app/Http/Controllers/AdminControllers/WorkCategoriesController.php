@@ -3,27 +3,25 @@
 namespace App\Http\Controllers\AdminControllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Category;
+use App\WorkCategory;
 
-class CategoriesController extends Controller
+class WorkCategoriesController extends Controller
 {
-  
+    
     public function index(){
 
-      $categories = Category::all();
+      $work_categories = WorkCategory::all();
 
-      return view('vendor.backpack.base.categories.index', compact('categories'));
+      return view('vendor.backpack.base.work-categories.index', compact('work_categories'));
 
    }
 
    public function store(Request $request){
 
-      Category::create($request->all());
+      WorkCategory::create($request->all());
 
-      return redirect('/admin/categories');
+      return redirect('/admin/work-categories');
    }
 
    public function show($id) {
@@ -32,9 +30,9 @@ class CategoriesController extends Controller
 
    public function edit($id){
 
-      $category = Category::findOrFail($id);
+      $work_category = WorkCategory::findOrFail($id);
 
-      return view('vendor.backpack.base.categories.edit', compact('category'));
+      return view('vendor.backpack.base.work-categories.edit', compact('work_category'));
    }
 
    /**
@@ -46,11 +44,11 @@ class CategoriesController extends Controller
 */
    public function update(Request $request, $id)
    {
-      $category = Category::findOrFail($id);
+      $work_category = WorkCategory::findOrFail($id);
 
-      $category->update($request->all());
+      $work_category->update($request->all());
 
-      return redirect('/admin/categories');
+      return redirect('/admin/work-categories');
    }
 
       /**
@@ -61,8 +59,8 @@ class CategoriesController extends Controller
    */
    public function destroy($id)
    {
-      Category::findOrFail($id)->delete();
+      WorkCategory::findOrFail($id)->delete();
 
-      return redirect('/admin/categories');
+      return redirect('/admin/work-categories');
    }
 }

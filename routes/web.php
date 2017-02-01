@@ -33,14 +33,13 @@ Route::group(['middleware' => 'admin'], function() {
    Route::resource('admin/categories', 'AdminControllers\CategoriesController');
    Route::resource('admin/media', 'AdminControllers\MediaController');
 
-    //Projects
-   Route::resource('admin/projects', 'AdminControllers\ProjectsController');
-
-  //Project Categories
-   Route::resource('admin/project-categories', 'AdminControllers\ProjectCategoriesController');
+//     //Projects
+//    Route::resource('admin/projects', 'AdminControllers\ProjectsController');
 
     //Works
    Route::resource('admin/works', 'AdminControllers\WorksController');
+   //Work Categories
+   Route::resource('admin/work-categories', 'AdminControllers\WorkCategoriesController');
 
 });
 
