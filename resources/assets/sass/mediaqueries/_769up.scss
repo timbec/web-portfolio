@@ -1,0 +1,136 @@
+/* 769 and up*/
+
+.o-wrapper.container.site {
+    max-width: 1200px; 
+    margin: 30px auto 0 auto; 
+}
+
+#content {
+    margin-top: -40px; 
+    #primary {
+        float: left; 
+        overflow:hidden; 
+    }
+    #banner-wrapper {
+        height: 500px; 
+        position: relative; 
+         #intro {
+            position: absolute; 
+            top: 0; 
+            background: #fff;
+            width: 50%;
+            padding: 20px 80px 20px 10px;
+            margin-left: 30px; 
+            border: 1px solid #09021d;
+            z-index: 0; 
+            p {
+                text-align: left; 
+                width: 75%; 
+                }
+            button#contact-me {
+                float: left; 
+                width: 30%; 
+                }
+            }
+
+    #slider {
+        position: absolute;
+        right: 0; 
+        width: 50%; 
+        margin: 30px 0 60px;
+        zoom: 1;
+        z-index: 100; 
+            .flexslider {
+                padding: 5px; 
+                border: 1px solid #09021d;
+            }
+        }
+    }
+}
+
+.black-rectangle {
+    width: 35%;
+    height: 100%;
+    background: #09021d;
+    position: absolute;
+    right: 0;
+    z-index: -10;
+    margin-top: -45px; 
+}
+
+.blue-circle {
+    right: 29%; 
+    top: -58px; 
+}
+.titles {
+    h4.subheader {
+    width: 300px; 
+    text-align: right; 
+    font-size: 45px; 
+    margin-top: -72px; 
+    margin-right: 205px; 
+    margin-left: auto; 
+    }
+}
+
+#caption {
+    display: block; 
+}
+
+/*********
+    Make Nav display on @page
+*************/
+
+#c-menu--push-left {
+    display: none; 
+}
+
+#c-button--push-left {
+    display: none; 
+}
+
+button.c-menu__close {
+    display: none !important; 
+}
+
+#site-navigation {
+    display: block; 
+}
+
+
+#projects {
+        .view {
+            width: 300px;
+            margin: 2% 1%; 
+            img {
+                width: 100%; 
+            }
+        }
+
+        .view .mask,.view .content {
+        width: 300px;
+        height: auto;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        }
+
+        .view-fifth:hover img {
+            width: 100%; 
+        -webkit-transform: translateX(300px);
+        -moz-transform: translateX(300px);
+        -o-transform: translateX(300px);
+        -ms-transform: translateX(300px);
+        transform: translateX(300px);
+        }
+
+        // .view-fifth .mask {
+        // background-color: rgba(255,255,255,0.3);
+        // -webkit-transform: translateX(-310px);
+        // -moz-transform: translateX(-310px);
+        // -o-transform: translateX(-310px);
+        // -ms-transform: translateX(-310px);
+        // transform: translateX(-310px);
+        // }
+}

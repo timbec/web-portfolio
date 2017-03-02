@@ -20,6 +20,7 @@ class CreateWorksTable extends Migration
            $table->integer('thumbnail_id')->unsigned()->index();
            $table->string('title');
            $table->text('body');
+           $table->text('description'); 
            $table->string('website_link');
            $table->string('slug')->nullable();
            $table->timestamps();

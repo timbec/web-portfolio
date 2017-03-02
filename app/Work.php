@@ -29,7 +29,8 @@ class Work extends Model
           'thumbnail_id',
           'title',
           'website_link',
-          'body'
+          'body', 
+          'description'
       ];
 
        public function user() {

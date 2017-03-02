@@ -21,7 +21,7 @@ class PostsController extends Controller
      */
     public function index(Tag $tag=null)
     {
-        $posts = Post::paginate(3);
+        $posts = Post::paginate(5);
 
         return view('vendor.backpack.base.posts.index', compact('posts'));
     }

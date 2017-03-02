@@ -1,6 +1,5 @@
 /*Styles from original*/
  html, body {
-                background-color: #333;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -61,3 +60,4 @@
 @import 'base/typography';
 @import 'layouts/layout'; 
 @import 'mediaqueries/mediaqueries'; 
+@import 'vendor/vendor'; 

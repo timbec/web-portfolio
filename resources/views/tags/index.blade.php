@@ -3,7 +3,7 @@
 @section('content')
    <h1>Tag List</h1>
 
-   {{ $tag }}
+   <!--{{ $tag }}-->
    @if($posts)
       @foreach($posts as $post)
          <figure>
@@ -20,10 +20,10 @@
    @if($works)
       @foreach($works as $work)
          <figure>
-            <a href="{{route('blog.work', $work->slug)}}"><img height="100px" src="{{ $work->photo ? $work->photo->file : 'http://placehold.it/50*50'}}" alt=""></a>
+            <a href="{{route('works.work', $work->slug)}}"><img height="100px" src="{{ $work->photo ? $work->photo->file : 'http://placehold.it/50*50'}}" alt=""></a>
          </figure>
          <header>
-            <h1><a href="{{route('blog.work', $work->slug)}}">{{ $work->title}}</a></h1>
+            <h1><a href="{{route('works.work', $work->slug)}}">{{ $work->title}}</a></h1>
             {{$work->created_at->diffForHumans()}}
          </header>
 

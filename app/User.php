@@ -51,4 +51,10 @@ class User extends Authenticatable
    {
       return $this->hasMany('App\Work');
    }
+
+   //Assigns case studies to user
+    public function casestudies()
+   {
+      return $this->hasMany('App\CaseStudy');
+   }
 }

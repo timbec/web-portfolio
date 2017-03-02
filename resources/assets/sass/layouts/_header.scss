@@ -8,34 +8,52 @@
    display: none;
 }
 
-.logo {
-        width: 300px;
-        height: 200px;
-        position: absolute;
-        left: 20px;
-        z-index: -100;
-    }
 
 #masthead {
     @include clearfix();
-    background-color: $transparent_white;
+    background-color: rgba(255, 255, 255, 0.4);
     position: relative;
     width: 100%;
     z-index: 0;
 }
 
+.main-logo-title {
+    width: 96%; 
+    text-align: center; 
+    margin: 0 2%; 
+    position: relative; 
+}
+
 .titles {
     width: 98%;
-    float: left;
+    position: absolute; 
+    right:auto; 
+    padding: 0 1%;
+    top: 15px; 
     z-index: 100;
+    #site-title {
+         a {
+        text-decoration: none;
+        font-size: 45px;  
+        }
+    }
+    h4.subheader {
+         color: #FFFFFF;
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        font-variant: small-caps;
+        text-shadow: 2px 2px 3px #09021D;
+        margin-top: 20px; 
+        }
 }
 
 #site-title {
     width: auto;
-    margin-top: 30px;
+    margin-top: 0px;
     text-align: center;
     a {
-    font-size: 65px;
+    font-size: 50px;
     @include blairMidi();
     color: $black;
     margin: 0px;
@@ -46,18 +64,9 @@
     }
 }
 
-.subheader {
-    color: #FFFFFF;
-    font-size: 45px;
-    width: 100%;
-    text-align: center;
-    font-variant: small-caps;
-    text-shadow: 2px 2px 3px #09021D;
-    margin-top: -55px;
-}
-
 #caption {
     width: 240px;
+    display: none; 
     position: absolute;
     top:80px;
     right: 50px;
@@ -76,4 +85,9 @@
 
 #caption li:nth-child(3) {
     margin-left: 40px;
+}
+
+
+#caption {
+    display: none; 
 }

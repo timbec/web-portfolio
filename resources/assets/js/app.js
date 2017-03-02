@@ -6,6 +6,8 @@
  */
 
 require('./bootstrap');
+require('./flexslider.min.js'); 
+require('./menu.js'); 
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -18,3 +20,32 @@ require('./bootstrap');
 // const app = new Vue({
 //     el: 'body'
 // });
+
+
+$(document).ready(function($) {
+
+    $('.flexslider').flexslider({
+        animation: "slide" 
+    }); 
+}); 
+
+console.log('working');
+
+  /**
+   * Push left instantiation and action.
+   */
+  var pushLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'push-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+
+  console.log(pushLeft); 
+
+  var pushLeftBtn = document.querySelector('#c-button--push-left');
+  
+  pushLeftBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    pushLeft.open();
+  });

@@ -29,4 +29,10 @@ class CreatePostRequest extends FormRequest
            'body' => 'required'
         ];
     }
+
+    public function comments() {
+
+        return $this->hasMany(Comment::class); 
+
+    }
 }

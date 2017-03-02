@@ -6,14 +6,16 @@
    @if($work)
    
       <header>
-         <h1>{{ $work->title}}</h1>
-         <p>By: <span>{{ $work->user->name}}</span> worked: {{$work->created_at->diffForHumans()}} </p>
-
-    
+         <h1>{{ $work->title}}</h1>    
       </header>
 
       <section class="work-content">
-         <p>{{ $work->body }}</p>
+          <!--Preview Image-->
+          <img class="img-responsive" src="{{ $work->photo ? $work->photo->file : null }}" alt="">
+         <p>{!! $work->body !!}</p>
       </section>
+      <sidebar>
+          <a href="{{ $work->website_link }}">Live Site</a>
+      </sidebar>
    @endif
 @stop
