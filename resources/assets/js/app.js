@@ -27,9 +27,14 @@ $(document).ready(function($) {
     $('.flexslider').flexslider({
         animation: "slide" 
     }); 
-}); 
 
-console.log('working');
+    $(".comment-reply-container .toggle-reply").click(function(){
+
+          console.log(this); 
+          $(this).next().slideToggle("slow");
+
+      });
+}); 
 
   /**
    * Push left instantiation and action.

@@ -34,16 +34,17 @@ class PostsController extends Controller
    public function post($slug)
    {
 
-
      $post = Post::where('slug', $slug)->firstOrFail();
 
-      $tags = Tag::all(); 
+     $tags = Tag::all(); 
 
-      $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')            ->groupBy('year','month')
+     $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')            ->groupBy('year','month')
                   ->get()->toArray();
 
+      $comments = $post->comments()->whereIsActive(1)->get();
+
      //return $post;
-     return view('blog.post', compact('post', 'tags', 'archives'));
+     return view('blog.post', compact('post', 'tags', 'archives', 'comments'));
 
    }
 }
