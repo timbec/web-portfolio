@@ -16,6 +16,11 @@ class PagesController extends Controller
         return view('pages.about'); 
     }
 
+         public function cv() {
+
+        return view('pages.cv'); 
+    }
+
      public function contact() {
 
         return view('pages.contact'); 

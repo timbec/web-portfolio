@@ -110,7 +110,7 @@ ul#menu-inner {
 .c-menu {
   position: fixed;
   z-index: 200;
-  background-color: $blue;
+  background-color: $black;
   transition: transform 0.3s;
 }
 
@@ -133,7 +133,7 @@ ul#menu-inner {
  */
 .c-menu__close {
   color: #fff;
-  background-color: $blue;
+  background-color: $black;
   font-size: 14px;
   border: none;
   box-shadow: none;
@@ -173,7 +173,7 @@ body.has-active-menu {
   overflow: hidden;
   width: 0;
   height: 0;
-  background-color: $blue;
+  background-color: $black;
   opacity: 0;
   transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
 }
@@ -203,9 +203,10 @@ body.has-active-menu {
     background: white;
     padding: 20px 20px;
     font-size: 20px;
-    border: 1px solid $blue;
+    color: $black; 
+    border: 1px solid $black;
     &:hover {
-      background: $blue; 
+      background: $black; 
       color: white; 
       border: 1px solid white; 
     }
@@ -228,7 +229,7 @@ body.has-active-menu {
   display: block;
   text-align: center;
   border-top: solid 1px #b5dbe9;
-  border-bottom: solid 1px $blue;
+  border-bottom: solid 1px $black;
 }
 
 .c-menu--slide-left .c-menu__item:first-child,

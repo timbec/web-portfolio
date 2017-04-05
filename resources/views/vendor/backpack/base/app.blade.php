@@ -68,7 +68,7 @@
 
     <nav id="site-navigation" class="main-navigation" role="navigation">
       <div class="collapse navbar-collapse"><ul id="menu-primary" class="nav navbar-nav"><li id="menu-item-680" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-680"><a title="About" href="/about">About</a></li>
-        <li id="menu-item-679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-679"><a title="Portfolio" href="#portfolio">Portfolio</a></li>
+        <li id="menu-item-679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-679"><a title="Portfolio" href="/#portfolio">Portfolio</a></li>
         <li id="menu-item-433" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-433"><a title="CV" href="/cv">CV</a></li>
         <li id="menu-item-413" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-413"><a title="Contact" href="/contact">Contact</a></li>
         <li id="menu-item-573" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-573"><a title="blog" href="/blog">blog</a></li>

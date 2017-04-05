@@ -25,16 +25,22 @@ body {
     margin-top: 90px;
 }
 
+#content {
+    margin-top: 50px; 
+}
+
 #page #content {
     margin-top: 0px;
+}
+
+#primary {
+    width: 100%; 
 }
 
 
 
 
-/*=============================================
-    ::Single Web
-    =================================================*/
+/*Think this is old*/
 
 .web {
     background: #fff;
@@ -107,7 +113,7 @@ h1.site-title {
 }
 
 .entry-thumbnail img {
-    width: 98%;
+    width: 96%;
     height: auto;
     padding: 1%;
     border: 1px solid #09021d;

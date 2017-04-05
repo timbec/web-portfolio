@@ -70,10 +70,36 @@
     }
 }
 
+#button-list {
+    display: flex; 
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    /* You can set flex-wrap and flex-direction individually */
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* Or do it all in one line with flex flow */
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    /* tweak the where items line up on the row */
+    /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+    width: 100%;
+    button {
+        width: 20%; 
+    }
+}
+
 /*Home Page Projects*/
-#projects {
-    /*Home Page Projects*/
-       display: -webkit-flex;
+#projects ul {
+    width: 100%; 
+   display: -webkit-flex;
    display: flex;
    -webkit-align-items: center;
    align-items: center;
@@ -92,7 +118,8 @@
    -webkit-align-content: flex-end;
    align-content: flex-end;
     .view {
-        width: 290px;
+        width: 300px; 
+        height: auto; 
         margin: 2% 1%; 
         img {
             width: 100%; 
@@ -100,29 +127,11 @@
     }
 
     .view .mask,.view .content {
-    width: 290px;
+    width: 300px;
     height: auto;
     position: absolute;
     overflow: hidden;
     top: 0;
     left: 0;
     }
-
-    .view-fifth:hover img {
-        width: 100%; 
-    -webkit-transform: translateX(290px);
-    -moz-transform: translateX(290px);
-    -o-transform: translateX(290px);
-    -ms-transform: translateX(290px);
-    transform: translateX(290px);
-    }
-
-    // .view-fifth .mask {
-    // background-color: rgba(255,255,255,0.3);
-    // -webkit-transform: translateX(-290px);
-    // -moz-transform: translateX(-290px);
-    // -o-transform: translateX(-290px);
-    // -ms-transform: translateX(-290px);
-    // transform: translateX(-290px);
-    // }
 }

@@ -44,7 +44,7 @@
                <ul>
                   <li>
                      <a href="">About</a>
-                     <a href="#portfolio">Portfolio</a>
+                     <a href="/#portfolio">Portfolio</a>
                      <a href="">CV</a>
                      <a href="">Contact</a>
                      <a href="">Blog</a>

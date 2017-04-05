@@ -20,7 +20,7 @@ class WorksController extends Controller
    {
       $works = Work::paginate(5);
 
-      return view('works.index', compact('works'));
+      return view('pages.home', compact('works'));
 
    }
 
@@ -30,8 +30,10 @@ class WorksController extends Controller
 
      $work = Work::where('slug', $slug)->firstOrFail();
 
+     $tags = Tag::all(); 
+
      //return $post;
-     return view('works.work', compact('work'));
+     return view('works.work', compact('work', 'tags'));
 
    }
 }

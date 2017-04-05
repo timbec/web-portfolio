@@ -20,3 +20,22 @@
     float: none; 
     margin: 20px auto; 
 }
+
+.blog-content {
+    width: 70%; 
+    margin-left: 55px;
+    .blog-header {
+        margin-left: -135px;
+    }
+    figure {
+        margin: 1em 40px; 
+    }
+}
+
+.blog-sidebar {
+    width: 20%; 
+}
+
+#overlay img {
+    height: auto; 
+}

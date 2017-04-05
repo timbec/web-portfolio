@@ -13,6 +13,7 @@
 
 Route::get('/', 'PagesController@home'); 
 Route::get('/about', 'PagesController@about'); 
+Route::get('/cv', 'PagesController@cv'); 
 Route::get('/contact', 'PagesController@contact'); 
 
 //Posts/blog
@@ -23,7 +24,7 @@ Route::get('/blog/{slug}', ['as' => 'blog.post', 'uses'=>'PostsController@post']
 Route::get('/tags/{tag}', 'TagsController@index');
 
 //Projects
-Route::get('/works', 'WorksController@index');
+Route::get('/', 'WorksController@index');
 Route::get('/works/{slug}', ['as' => 'works.work', 'uses'=>'WorksController@work']);
 
 //Admin routes

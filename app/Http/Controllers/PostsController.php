@@ -38,7 +38,8 @@ class PostsController extends Controller
 
      $tags = Tag::all(); 
 
-     $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')            ->groupBy('year','month')
+     $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
+                  ->groupBy('year','month')
                   ->get()->toArray();
 
       $comments = $post->comments()->whereIsActive(1)->get();

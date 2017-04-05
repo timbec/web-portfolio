@@ -13,27 +13,28 @@
 /*769 and up*/
 
 .blog-content {
-        width: 70%;
+        width: 100%;
         float: left; 
-        margin-left: 40px; 
         article.post {
             background: rgba(255, 255, 255, 0.96);
             padding: 2% 10%;
             margin-top: 55px;
             margin-bottom: 50px;
-            margin-left: 55px;
             border: 1px solid #09021d;
+            figure {
+                margin: 0; 
+            }
             img {
                 max-width: 100%; 
                 height: auto; 
             }
             .blog-header {
                 background: #fff;
-                width: 100%;
+                width: auto;
                 padding: 5px 10px; 
                 margin-top: -50px;
                 margin-bottom: 18px;
-                margin-left: -135px;
+
                 border:1px solid $black; 
                 h1 {
                     text-align: left !important; 
@@ -47,12 +48,49 @@
 }
 
 .blog-sidebar {
-    width: 20%; 
+    width: 100%; 
     float: right;
     padding: 10px; 
     margin-top: 55px; 
     border: 1px solid $black;  
 }
+
+ul.tag-cloud {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+    margin-top: 50px; 
+}
+ul.tag-cloud li {
+	display: inline-block;
+	margin: 0 .3em .3em 0;
+	padding: 0;
+}
+
+ul.tag-cloud li a {
+	display: inline-block;
+	max-width: 100px;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 1em;
+	background-color: #fff;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #333;
+	font-size: 13px;
+	text-decoration: none;
+	-webkit-transition: .2s;
+	transition: .2s;
+}
+ul.tag-cloud li a:hover {
+	background-color: $black;
+	border: 1px solid $black;
+	color: #fff;
+}
+
 
 ul.tags {
     li {
@@ -98,11 +136,35 @@ ul.tags {
     border: 1px solid #ddd;
 }
 
-/*Portfolio*/
+/*=============================================
+    ::Single Web
+    =================================================*/
 
-.work-content {
-    margin-left: 50px; 
+header.work-single {
+    margin: 75px 10px 0 10px; 
+    h1 {
+        text-align: center;
+        color: $black; 
+    } 
 }
+
+section.work-content {
+    width: 96%; 
+    float: left; 
+    margin: 0px 2%; 
+    img {
+        max-width: 100%; 
+        height: auto; 
+    }
+}
+
+sidebar {
+    width: 100%; 
+    float: left;
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 20px; 
+}
+
 
 /*Comments*/
 #nested-comment {
