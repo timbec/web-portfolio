@@ -42,10 +42,9 @@ class PostsController extends Controller
                   ->groupBy('year','month')
                   ->get()->toArray();
 
-      $comments = $post->comments()->whereIsActive(1)->get();
 
      //return $post;
-     return view('blog.post', compact('post', 'tags', 'archives', 'comments'));
+     return view('blog.post', compact('post', 'tags', 'archives'));
 
    }
 }
