@@ -45,16 +45,9 @@ Route::group(['middleware' => 'admin'], function() {
     //Tags
    Route::resource('admin/tags', 'AdminControllers\TagsController');
 
-   Route::resource('admin/comments', 'AdminControllers\PostCommentsController'); 
-   Route::resource('admin/comments/replies', 'AdminControllers\CommentRepliesController'); 
 
 });
 
-
-Route::group(['middleware'=>'auth'], function() {
-
-    Route::post('comment/reply', 'CommentRepliesController@createReply'); 
-});
 
 //File Uploads
 // Route::post('/test_images', function() {
