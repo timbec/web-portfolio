@@ -52,9 +52,9 @@ $(document).ready(function($) {
       //   }
       // });
 
-      $('button').on('click', function() {
-        $(this).parents('#projects').find('li').removeClass('show');
-        $(this).parents('#projects').find('li').addClass('hide');
+    $('button').on('click', function() {
+      $(this).parents('#projects').find('li').removeClass('show');
+      $(this).parents('#projects').find('li').addClass('hide');
    });
 
    $('#personal').on('click', function() {
