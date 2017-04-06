@@ -63,10 +63,10 @@ $(document).ready(function($) {
    });
    $('#corporate').on('click', function() {
       $('li.Corporate').removeClass('hide');
-      $('li.Corporate').addClaCs('show');
+      $('li.Corporate').addClass('show');
    });
    $('#agency').on('click', function() {
-      $('li.Agency').removeClAss('hide');
+      $('li.Agency').removeClass('hide');
       $('li.Agency').addClass('show');
    });
    $('#private-client').on('click', function() {
