@@ -2123,12 +2123,12 @@ html, body {
     height: auto;
   }
   section.work-content {
-    width: 65%;
+    width: 60%;
     margin-left: 50px;
   }
   sidebar {
     width: 25%;
-    margin-left: 3%;
+    margin-left: 2%;
   }
 }
 

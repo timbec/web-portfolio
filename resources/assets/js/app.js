@@ -57,17 +57,21 @@ $(document).ready(function($) {
         $(this).parents('#projects').find('li').addClass('hide');
    });
 
-   $('#wordpress').on('click', function() {
-      $('li.Wordpress').removeClass('hide');
-      $('li.Wordpress').addClass('show');
+   $('#personal').on('click', function() {
+      $('li.Personal').removeClass('hide');
+      $('li.Personal').addClass('show');
    });
-   $('#laravel').on('click', function() {
-      $('li.Laravel').removeClass('hide');
-      $('li.Laravel').addClass('show');
+   $('#corporate').on('click', function() {
+      $('li.Corporate').removeClass('hide');
+      $('li.Corporate').addClaCs('show');
    });
-   $('#front-end').on('click', function() {
-      $('li.Front-end').removeClass('hide');
-      $('li.Front-end').addClass('show');
+   $('#agency').on('click', function() {
+      $('li.Agency').removeClAss('hide');
+      $('li.Agency').addClass('show');
+   });
+   $('#private-client').on('click', function() {
+      $('li.Private-Client').removeClass('hide');
+      $('li.Private-Client').addClass('show');
    });
    $('#all').on('click', function() {
       $('li').removeClass('hide');
