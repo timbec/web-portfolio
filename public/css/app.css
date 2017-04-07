@@ -1962,12 +1962,13 @@ html, body {
     align-content: flex-end;
   }
   #projects ul .view {
-    width: 300px;
+    width: 225px;
     height: auto;
     margin: 2% 1%;
   }
   #projects ul .view img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
   #projects ul .view .mask, #projects ul .view .content {
     width: 300px;

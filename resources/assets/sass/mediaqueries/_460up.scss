@@ -118,11 +118,12 @@
    -webkit-align-content: flex-end;
    align-content: flex-end;
     .view {
-        width: 300px; 
+        width: 225px; 
         height: auto; 
         margin: 2% 1%; 
         img {
-            width: 100%; 
+            max-width: 100%; 
+            height: auto; 
         }
     }
 
