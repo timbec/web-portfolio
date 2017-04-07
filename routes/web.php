@@ -27,6 +27,12 @@ Route::get('/tags/{tag}', 'TagsController@index');
 Route::get('/', 'WorksController@index');
 Route::get('/works/{slug}', ['as' => 'works.work', 'uses'=>'WorksController@work']);
 
+//Contact Forms 
+Route::get('contact', 
+    ['as' => 'contact', 'uses' => 'ContactController@create']); 
+Route::post('contact', 
+    ['as' => 'contact_store', 'uses' => 'ContactController@store']); 
+
 //Admin routes
 Route::group(['middleware' => 'admin'], function() {
 
