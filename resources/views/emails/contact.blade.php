@@ -1,4 +1,4 @@
-You received a message from the Web Portfolio:
+You received a message from Tim Beckett:
 
 <p>
 Name: {{ $name }}

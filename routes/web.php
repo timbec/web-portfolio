@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Mail; 
+
+
 Route::get('/', 'PagesController@home'); 
 Route::get('/about', 'PagesController@about'); 
 Route::get('/cv', 'PagesController@cv'); 
@@ -32,6 +35,18 @@ Route::get('contact',
     ['as' => 'contact', 'uses' => 'ContactController@create']); 
 Route::post('contact', 
     ['as' => 'contact_store', 'uses' => 'ContactController@store']); 
+
+// Route::get('/contact', function() {
+    
+//     $data = [
+//         'title' => 'This is a test message sent from the router',
+//         'content' =>'this is some content sent from the router'
+//     ];
+
+//     Mail::send('emails.contact', $data, function($message) {
+//     $message->to('timbeckett@ymail.com', 'Tim')->subject('Hi, What\'s up');
+// }); 
+// });
 
 //Admin routes
 Route::group(['middleware' => 'admin'], function() {
