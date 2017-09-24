@@ -9,6 +9,7 @@ require('./bootstrap');
 require('./flexslider.min.js'); 
 require('./menu.js'); 
 require('./magnific-popup'); 
+require('./prism.js');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
